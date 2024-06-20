@@ -33,10 +33,6 @@ const mainFeaturedPost = {
   linkText: 'View my projects…',
 };
 
-
-
-
-
 export default function Blog() {
   const [currentTheme, setCurrentTheme] = useState(darkTheme);
 
@@ -47,7 +43,7 @@ export default function Blog() {
   return (
     <ThemeProvider theme={currentTheme}>
       <CssBaseline />
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" sx={{ overflowX: 'hidden' }}>
         <Grid container justifyContent="space-between" alignItems="center" sx={{ mb: 2 }}>
           <Header title="Fernan de Hoyos" sections={sections} />
           <IconButton
@@ -57,11 +53,10 @@ export default function Blog() {
           >
             {currentTheme === darkTheme ? <Brightness7Icon /> : <Brightness4Icon />}
           </IconButton>
-
         </Grid>
         <main>
           <MainFeaturedPost post={mainFeaturedPost} />
-          <Grid item sx={{ display: 'flex', justifyContent: 'center', mt: 3 }}>
+          <Grid item sx={{ display: 'flex', justifyContent: 'center', mt: 3, width: '100%' }}>
             <Divider />
             <Typography variant="h4" gutterBottom color={currentTheme.typography}>
               Sobre mí
@@ -69,7 +64,7 @@ export default function Blog() {
           </Grid>
           <Divider />
           <About id='sobre-mi' />
-          <Grid item sx={{ display: 'flex', justifyContent: 'center', mt: 3 }}>
+          <Grid item sx={{ display: 'flex', justifyContent: 'center', mt: 3, width: '100%' }}>
             <Typography variant="h4" gutterBottom color={currentTheme.typography}>
               Proyectos destacados
             </Typography>
@@ -80,17 +75,15 @@ export default function Blog() {
               <FeaturedPost key={post.title} post={post} />
             ))}
           </Grid>
-          <Grid item sx={{ display: 'flex', justifyContent: 'center', mt: 3 }}>
+          <Grid item sx={{ display: 'flex', justifyContent: 'center', mt: 3, width: '100%' }}>
             <Divider />
             <Typography variant="h4" gutterBottom color={currentTheme.typography}>
               Certificaciones
             </Typography>
           </Grid>
           <Divider />
-          
-            <Certifications id='certificados' />
-          
-          <Grid item sx={{ display: 'flex', justifyContent: 'center', mt: 3 }}>
+          <Certifications id='certificados' />
+          <Grid item sx={{ display: 'flex', justifyContent: 'center', mt: 3, width: '100%' }}>
             <Divider />
             <Typography variant="h4" gutterBottom color={currentTheme.typography}>
               Habilidades
@@ -98,7 +91,7 @@ export default function Blog() {
           </Grid>
           <Divider />
           <Skills id='habilidades' />
-          <Grid item sx={{ display: 'flex', justifyContent: 'center', mt: 3 }}>
+          <Grid item sx={{ display: 'flex', justifyContent: 'center', mt: 3, width: '100%' }}>
             <Divider />
             <Typography variant="h4" gutterBottom color={currentTheme.typography}>
               Contacto
@@ -112,7 +105,6 @@ export default function Blog() {
               phone: '+57 3136601690',
               address: 'La pradera, Monteria - Cordoba'
             }}
-
           />
         </main>
       </Container>
