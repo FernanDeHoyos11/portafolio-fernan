@@ -12,6 +12,7 @@ export const darkTheme = createTheme({
     },
     background: {
       default: '#010101',
+      appBar: '#333',
     },
   },
   typography: {
@@ -34,6 +35,7 @@ export const lightTheme = createTheme({
     },
     background: {
       default: '#ffffff',
+      appBar: '#fff',
     },
   },
   typography: {

@@ -43,13 +43,19 @@ export default function Blog() {
   return (
     <ThemeProvider theme={currentTheme}>
       <CssBaseline />
+      <Header title="Fernan de Hoyos" sections={sections} />
       <Container maxWidth="lg" sx={{ overflowX: 'hidden' }}>
         <Grid container justifyContent="space-between" alignItems="center" sx={{ mb: 2 }}>
-          <Header title="Fernan de Hoyos" sections={sections} />
+         
           <IconButton
             onClick={toggleTheme}
             color="inherit"
-            style={{ fontSize: '30px' }} // Ajusta el tamaño del botón
+            style={{ 
+              fontSize: '30px',
+              position: 'absolute',
+              left: 230,
+              top: 11}}
+               // Ajusta el tamaño del botón
           >
             {currentTheme === darkTheme ? <Brightness7Icon /> : <Brightness4Icon />}
           </IconButton>
