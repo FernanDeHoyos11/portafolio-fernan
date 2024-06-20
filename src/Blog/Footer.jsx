@@ -52,7 +52,7 @@ function Footer(props) {
           Developed by{' '}
           <Link
             color="inherit"
-            href="https://linkedin.com/in/tuusuario"
+            href="https://www.linkedin.com/in/fernan-de-hoyos-290072197/"
             target="_blank"
             rel="noopener noreferrer"
             sx={{ color: '#0F969C', textDecoration: 'none', '&:hover': { textDecoration: 'underline' } }}
@@ -63,7 +63,7 @@ function Footer(props) {
         <Box>
           <IconButton
             component="a"
-            href="https://github.com/tuusuario/tu-repo/fork"
+            href="https://github.com/FernanDeHoyos11/portafolio-fernan/fork"
             target="_blank"
             rel="noopener noreferrer"
             sx={{ color: '#fff' }}
@@ -72,7 +72,7 @@ function Footer(props) {
           </IconButton>
           <IconButton
             component="a"
-            href="https://github.com/tuusuario/tu-repo"
+            href="https://github.com/FernanDeHoyos11/portafolio-fernan/"
             target="_blank"
             rel="noopener noreferrer"
             sx={{ color: '#fff' }}

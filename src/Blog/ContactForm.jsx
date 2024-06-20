@@ -61,6 +61,7 @@ const StyledTextField = styled(TextField)(({ theme }) => ({
 }));
 
 const ContactPaper = styled(Paper)(({ theme }) => ({
+  elevation:15,
   position: 'relative',
   background: '#121212',
   color: '#fff',
@@ -93,7 +94,7 @@ const ContactPaper = styled(Paper)(({ theme }) => ({
   },
 }));
 
-export const ContactForm = ({ contactInfo }) => {
+export const ContactForm = ({ contactInfo, color }) => {
   const form = useRef();
   const [disable, setDisable] = useState(false);
 
@@ -117,9 +118,9 @@ export const ContactForm = ({ contactInfo }) => {
   };
 
   return (
-    <Grid container spacing={2} sx={{ marginBottom: 5 }} id="contacto">
-      <Grid item xs={12} md={6}>
-        <ContactPaper>
+    <Grid container spacing={2} sx={{ marginBottom: 5, mt: 0.5 }} id="contacto">
+      <Grid item xs={12} md={6} elevation={15}>
+        <ContactPaper elevation={15}>
           <StyledWindowControls>
             <StyledWindowButton type="close" />
             <StyledWindowButton type="minimize" />
@@ -205,12 +206,12 @@ export const ContactForm = ({ contactInfo }) => {
         <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2 }}>
           <IconButton
             component="a"
-            href="https://github.com/tuusuario"
+            href="https://github.com/FernanDeHoyos11"
             target="_blank"
             rel="noopener noreferrer"
             sx={{
-              color: '#fff',
-              border: '2px solid transparent',
+              color: '#03DAC6',
+              border: '2px solid #03DAC6',
               transition: 'border-color 0.3s, transform 0.3s',
               '&:hover': {
                 borderColor: '#00CED1',
@@ -222,12 +223,12 @@ export const ContactForm = ({ contactInfo }) => {
           </IconButton>
           <IconButton
             component="a"
-            href="https://linkedin.com/in/tuusuario"
+            href="https://www.linkedin.com/in/fernan-de-hoyos-290072197/"
             target="_blank"
             rel="noopener noreferrer"
             sx={{
-              color: '#fff',
-              border: '2px solid transparent',
+              color: '#03DAC6',
+              border: '2px solid #03DAC6',
               transition: 'border-color 0.3s, transform 0.3s',
               '&:hover': {
                 borderColor: '#00CED1',

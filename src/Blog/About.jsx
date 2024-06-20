@@ -8,16 +8,16 @@ import GetAppIcon from '@mui/icons-material/GetApp';
 
 const StyledBox = styled(Box)(({ theme }) => ({
   marginTop: theme.spacing(2),
-  elevation:'30px',
+  elevation: '30px',
   color: theme.palette.common.white,
   background: 'linear-gradient(45deg, #010101 50%, #121212 90%)',
-  borderRadius: theme.shape.borderRadius,
+  borderRadius: 2,
   padding: theme.spacing(3),
-  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', 
+  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
   position: 'relative',
   '&:hover': {
     border: '1px solid #03DAC6',
-    transform: 'scale(1.01)', 
+    transform: 'scale(1.01)',
   },
 }));
 
@@ -99,12 +99,18 @@ const DeveloperName = styled(Typography)(({ theme }) => ({
   fontWeight: 'bold',
   color: '#0F969C', // Color dorado para el nombre
   marginBottom: theme.spacing(2),
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '2rem',
+  },
 }));
 
 const DeveloperRole = styled(Typography)(({ theme }) => ({
   fontSize: '1.5rem',
   color: '#00CED1', // Color azul claro para el rol de desarrollador
   marginBottom: theme.spacing(2),
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '1.2rem',
+  },
 }));
 
 export const About = () => {
@@ -141,7 +147,7 @@ export const About = () => {
         </StyledBox>
       </Grid>
       <Grid item xs={12} sm={6} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: { xs: 'center', sm: 'left' } }}>
           <DeveloperName variant="h4" gutterBottom>
             ¡Hola! Soy Fernan de hoyos
           </DeveloperName>
@@ -153,24 +159,22 @@ export const About = () => {
             contigo. Si tienes alguna pregunta o deseas colaborar
             en un proyecto, no dudes en contactarme.
           </Typography>
-          <Grid item  
-          sx={{ display: 'flex', 
-          flexDirection: 'row', 
-          justifyContent: 'space-between', 
-          alignItems: 'center',
-          mt: 3,
-          padding: 5}}>
-            <ContactButton variant="contained" size="large" href="#contacto" startIcon={<MailIcon />}>
-              Contacto
-            </ContactButton>
-            <DownloadButton 
-            variant="contained" 
-            size="large" 
-            href="https://drive.google.com/file/d/1bDehSVOyzLcTniOP37OpN5NtQe8DTArI/view?usp=sharing"
-            startIcon={<GetAppIcon />}
-            target="_blank">
-              Descargar CV
-            </DownloadButton>
+          <Grid container spacing={2} sx={{ mt: 3 }}>
+            <Grid item xs={12} sm={6}>
+              <ContactButton variant="contained" size="large" href="#contacto" startIcon={<MailIcon />}>
+                Contacto
+              </ContactButton>
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <DownloadButton 
+                variant="contained" 
+                size="large" 
+                href="https://drive.google.com/file/d/1bDehSVOyzLcTniOP37OpN5NtQe8DTArI/view?usp=sharing"
+                startIcon={<GetAppIcon />}
+                target="_blank">
+                Descargar CV
+              </DownloadButton>
+            </Grid>
           </Grid>
         </Box>
       </Grid>

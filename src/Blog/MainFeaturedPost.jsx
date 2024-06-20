@@ -3,27 +3,41 @@ import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
+import IconButton from '@mui/material/IconButton';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
 
 function MainFeaturedPost(props) {
   const { post } = props;
 
+  const socialLinks = [
+    { href: 'https://github.com', icon: <GitHubIcon />, label: 'GitHub' },
+    { href: 'https://linkedin.com', icon: <LinkedInIcon />, label: 'LinkedIn' },
+    { href: 'https://facebook.com', icon: <FacebookIcon />, label: 'Facebook' },
+    { href: 'https://instagram.com', icon: <InstagramIcon />, label: 'Instagram' },
+  ];
+
   return (
     <Paper
-    elevation={15} 
-    sx={{
-      position: 'relative',
-      background: '#121213',
-      color: '#fff',
-      mb: 4,
-      backgroundSize: 'cover',
-      backgroundRepeat: 'no-repeat',
-      backgroundPosition: 'center',
-      boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.2)',
-      '&:hover': {
-        border: '1px solid #03DAC6',
-        transform: 'scale(1.01)', 
-      },
-    }}
+      elevation={15}
+      sx={{
+        position: 'relative',
+        background: '#121213',
+        color: '#0F969C',
+        mb: 4,
+        p: 5,
+        borderRadius: 2,
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+        boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.2)',
+        '&:hover': {
+          border: '1px solid #03DAC6',
+          transform: 'scale(1.01)',
+        },
+      }}
     >
       {/* Increase the priority of the hero background image */}
       {<img style={{ display: 'none' }} src={post.image} alt={post.imageText} />}
@@ -42,21 +56,41 @@ function MainFeaturedPost(props) {
             <Typography variant="h5" color="inherit" paragraph>
               {post.description}
             </Typography>
+            <Box sx={{ display: 'flex', mt: 2 }}>
+              {socialLinks.map((social) => (
+                <IconButton
+                  key={social.label}
+                  color="inherit"
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener"
+                  sx={{ 
+                    mr: 1, 
+                    '&:hover': {
+                      border: '1px solid #03DAC6',
+                      transform: 'scale(1.01)',
+                    }, 
+                  }}
+                >
+                  {social.icon}
+                </IconButton>
+              ))}
+            </Box>
           </Box>
         </Grid>
-        <Grid item md={5} sx={{paddingRight:10,}}>
+        <Grid item md={5} sx={{ paddingRight: 10 }}>
           <Box
             sx={{
               position: 'relative',
-              height: '100%', // No height to Box, height is controlled by padding
-              pt: '50%', // 1:1 Aspect Ratio
-              width: '100%',
+              height: '110%',
+              pt: '50%',
+              width: '300px',
               maxWidth: '300px',
-              backgroundSize: '150%', // Increase this value to "zoom" in the image
+              backgroundSize: '150%',
               backgroundRepeat: 'no-repeat',
               backgroundPosition: 'center',
               backgroundImage: `url(${post.image})`,
-              borderRadius: '50%', // Hacer la imagen redonda
+              borderRadius: '10%',
               ml: 'auto',
             }}
           />

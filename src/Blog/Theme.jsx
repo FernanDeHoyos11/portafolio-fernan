@@ -1,8 +1,9 @@
 import { createTheme } from '@mui/material/styles';
-import GlobalStyles from '@mui/material/GlobalStyles';
 
-export const theme = createTheme({
+// Tema oscuro
+export const darkTheme = createTheme({
   palette: {
+    mode: 'dark',
     primary: {
       main: '#1976d2',
     },
@@ -15,21 +16,32 @@ export const theme = createTheme({
   },
   typography: {
     fontFamily: 'Roboto, Arial, sans-serif',
+    fontSize: '30px',
+      color: '#ffffff'
   },
+  color: '#ffffff'
 });
 
-const globalStyles = (
-  <GlobalStyles
-    styles={{
-      body: {
-        background: theme.palette.background.gradient,
-        minHeight: '100vh',
-        margin: 0,
-        padding: 0,
-        width: '100%',
-      },
-    }}
-  />
-);
+// Tema claro
+export const lightTheme = createTheme({
+  palette: {
+    mode: 'light',
+    primary: {
+      main: '#1976d2',
+    },
+    secondary: {
+      main: '#dc004e',
+    },
+    background: {
+      default: '#ffffff',
+    },
+  },
+  typography: {
+    fontFamily: 'Roboto, Arial, sans-serif',
+    fontSize: '30px',
+    color: '#000000'
+  },
+  color: '#ffffff'
+});
 
-export { globalStyles };
+

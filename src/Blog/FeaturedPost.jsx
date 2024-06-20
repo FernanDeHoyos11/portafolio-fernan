@@ -13,9 +13,9 @@ function FeaturedPost(props) {
   const { post } = props;
 
   return (
-    <Grid item xs={12} md={4} id='proyectos'>
+    <Grid item spacing={2} xs={12} md={4} id='proyectos'  >
       <Card 
-       elevation={30}
+      elevation={15}
         sx={{ 
         display: 'flex', 
         flexDirection: 'column',

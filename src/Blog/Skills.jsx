@@ -67,9 +67,6 @@ const settings = {
 export default function Skills() {
   return (
     <Box id={'habilidades'} sx={{ mt: 3, display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
-      <Typography variant="h4" gutterBottom color={'white'}>
-        Skills
-      </Typography>
       <Box sx={{ width: '100%', maxWidth: 1200 }}>
         <Slider {...settings}>
           {skills.map((skill, index) => (
