@@ -93,7 +93,7 @@ export default function Blog() {
           <Grid item sx={{ display: 'flex', justifyContent: 'center', mt: 3 }}>
             <Divider />
             <Typography variant="h4" gutterBottom color={currentTheme.typography}>
-              Skills
+              Habilidades
             </Typography>
           </Grid>
           <Divider />
