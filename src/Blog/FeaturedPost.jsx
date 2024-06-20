@@ -13,18 +13,19 @@ function FeaturedPost(props) {
   const { post } = props;
 
   return (
-    <Grid item spacing={2} xs={12} md={4} id='proyectos'  >
+    <Grid item spacing={2} xs={12} sm={6} md={4} id='proyectos'>
       <Card 
-      elevation={15}
+        elevation={15}
         sx={{ 
-        display: 'flex', 
-        flexDirection: 'column',
-        background: '#121212',
-        borderRadius: 2,
-        color: 'white',
-        '&:hover': {
-          border: '1px solid #03DAC6', // Change border color here
-        }, }}>
+          display: 'flex', 
+          flexDirection: 'column',
+          background: '#121212',
+          borderRadius: 2,
+          color: 'white',
+          '&:hover': {
+            border: '1px solid #03DAC6', // Change border color here
+          }, 
+        }}>
         <CardActionArea 
           component="a" 
           href={post.link} 
@@ -32,7 +33,7 @@ function FeaturedPost(props) {
           rel="noopener noreferrer">
           <CardMedia
             component="img"
-            sx={{ width: '100%', display: { xs: 'none', sm: 'block' } }}
+            sx={{ width: '100%', display: 'block' }} // Ensure the image is always displayed
             image={post.image}
             alt={post.imageLabel}
           />
@@ -48,7 +49,7 @@ function FeaturedPost(props) {
             <Typography variant="subtitle1" color="primary">
               {post.link}
             </Typography>
-            <OpenInNewIcon color='black'/>
+            <OpenInNewIcon sx={{ color: 'white' }} />
           </Link>
         </CardContent>
       </Card>
